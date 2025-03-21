@@ -1,41 +1,3 @@
-```
-schema-codegen-start
-const typeDefs = `
-  type PremiumAdjustment {
-    id: ID!
-    comment: String!
-    totalBorrowerFees: Float!
-    cuRetailRate: Float!
-    protectedLoanAmount: Float!
-    payRate: Float!
-    premiumDue: Float!
-    totalAmount: Float!
-  }
-
-  input EditPremiumAdjustmentInput {
-    id: ID!
-    comment: String!
-    totalBorrowerFees: Float!
-    cuRetailRate: Float!
-    protectedLoanAmount: Float!
-    payRate: Float!
-    premiumDue: Float!
-    totalAmount: Float!
-  }
-
-  type Mutation {
-    editPremiumAdjustment(input: EditPremiumAdjustmentInput!): PremiumAdjustment
-  }
-
-  type Query {
-    getPremiumAdjustment(id: ID!): PremiumAdjustment
-  }
-`;
-schema-codegen-end
-```
-
-```
-resolver-codegen-start
 const resolvers = {
   Query: {
     getPremiumAdjustment: (_, { id }) => {
@@ -68,5 +30,5 @@ const resolvers = {
     }
   }
 };
-resolver-codegen-end
-```
+
+export default resolvers;
